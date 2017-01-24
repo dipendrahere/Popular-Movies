@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Popular Movies</string>
+    <string name="apikey"></string>
+    <string-array name="arrchoice">
+        <item>Rating</item>
+        <item>Popular</item>
+    </string-array>
+
+</resources>
