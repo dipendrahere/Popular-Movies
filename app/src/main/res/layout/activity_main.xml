@@ -6,11 +6,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-   <GridView
-       android:id="@+id/gridmovie"
-       android:gravity="center_horizontal"
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"
-       android:columnWidth="100dp"
-       android:numColumns="auto_fit" />
+    <GridView
+        android:id="@+id/gridmovie"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnWidth="100dp"
+        android:gravity="center_horizontal"
+        android:numColumns="auto_fit" />
+
 </LinearLayout>

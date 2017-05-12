@@ -11,7 +11,8 @@ import java.util.ArrayList;
 
 public class ParcelData implements Parcelable {
     private ArrayList<Movies> moviesArrayList;
-    public ParcelData(){
+
+    public ParcelData() {
         this.moviesArrayList = new ArrayList<Movies>();
     }
 

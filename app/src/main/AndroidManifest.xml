@@ -19,6 +19,10 @@
         <activity
             android:name=".Settings"
             android:label="Settings"></activity>
+        <activity
+            android:name=".MovieDetail"
+            android:label="Movie Details"
+            android:parentActivityName=".MainActivity"></activity>
     </application>
 
 </manifest>

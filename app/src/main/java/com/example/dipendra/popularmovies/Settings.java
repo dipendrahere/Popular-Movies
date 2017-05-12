@@ -18,11 +18,12 @@ public class Settings extends PreferenceActivity {
         NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
         return activeNetworkInfo != null && activeNetworkInfo.isConnected();
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.settings);
-        if(!isNetworkAvailable()){
+        if (!isNetworkAvailable()) {
             Toast.makeText(getApplicationContext(), "Internet non-availability may lead to no change is filter!", Toast.LENGTH_LONG).show();
         }
     }

@@ -3,75 +3,96 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="10dp"
     tools:context="com.example.dipendra.popularmovies.MovieDetail">
+
     <TextView
+        android:id="@+id/detailtitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="20dp"
-        android:textSize="25dp"
         android:fontFamily="casual"
-        android:textStyle="bold|italic"
+        android:padding="20dp"
         android:textAlignment="center"
-        android:id="@+id/detailtitle"/>
-    <LinearLayout
+        android:textSize="25dp"
+        android:textStyle="bold|italic" />
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:orientation="horizontal"
         android:layout_height="match_parent">
 
-        <ImageView
-            android:layout_width="200dp"
-            android:layout_height="300dp"
-            android:id="@+id/detailposter"/>
-
         <LinearLayout
-                android:layout_width="match_parent"
-                android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:textSize="20dp"
-                android:textColor="@android:color/darker_gray"
-                android:textStyle="bold"
-                android:text="Description"/>
-            <TextView
-                android:layout_marginTop="5dp"
-                android:textColor="@android:color/black"
-                android:layout_width="wrap_content"
-                android:id="@+id/detaildescription"
-                android:layout_height="wrap_content"
-                android:text=""/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:textSize="20dp"
-                android:textColor="@android:color/darker_gray"
-                android:textStyle="bold"
-                android:text="Vote Average"/>
-            <TextView
-                android:layout_marginTop="5dp"
-                android:textColor="@android:color/black"
-                android:layout_width="wrap_content"
-                android:id="@+id/detailvoteaverage"
-                android:layout_height="wrap_content"
-                android:text=""/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:textSize="20dp"
-                android:textColor="@android:color/darker_gray"
-                android:textStyle="bold"
-                android:text="Release Date"/>
-            <TextView
-                android:layout_marginTop="5dp"
-                android:textColor="@android:color/black"
-                android:layout_width="wrap_content"
-                android:id="@+id/detailreleasedate"
-                android:layout_height="wrap_content"
-                android:text=""/>
+
+                <ImageView
+                    android:id="@+id/detailposter"
+                    android:layout_width="200dp"
+                    android:layout_height="300dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerVertical="false"
+                    android:padding="10dp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Description"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/detaildescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@android:color/black" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Vote Average"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/detailvoteaverage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text=""
+                    android:textColor="@android:color/black" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Release Date"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/detailreleasedate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text=""
+                    android:textColor="@android:color/black" />
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
+    </ScrollView>
 </LinearLayout>

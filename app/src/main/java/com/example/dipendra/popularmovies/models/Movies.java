@@ -13,7 +13,8 @@ public class Movies implements Parcelable {
     private String overview;
     private String release_date;
     private String vote_average;
-    public Movies(){
+
+    public Movies() {
 
     }
 

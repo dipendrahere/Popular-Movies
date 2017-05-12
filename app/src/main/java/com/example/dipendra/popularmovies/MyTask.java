@@ -35,12 +35,14 @@ public class MyTask extends AsyncTask<URL, String, ArrayList<Movies>> {
     private GridView gridView;
     private StringBuffer json;
     private ProgressDialog progressDialog;
-    public MyTask(Activity activity){
+
+    public MyTask(Activity activity) {
         json = new StringBuffer("");
         this.activity = activity;
         gridView = (GridView) activity.findViewById(R.id.gridmovie);
         progressDialog = new ProgressDialog(activity);
     }
+
     private boolean isNetworkAvailable() {
         ConnectivityManager connectivityManager
                 = (ConnectivityManager) activity.getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -55,13 +57,14 @@ public class MyTask extends AsyncTask<URL, String, ArrayList<Movies>> {
         progressDialog.setCancelable(false);
         progressDialog.setIndeterminate(true);
         progressDialog.show();
-        if(!isNetworkAvailable()) {
+        if (!isNetworkAvailable()) {
             Toast.makeText(activity, "Internet connection is not there!", Toast.LENGTH_LONG).show();
             SharedPreferences sharedPreferences = activity.getPreferences(Context.MODE_PRIVATE);
-            json = new StringBuffer(sharedPreferences.getString("saved",null));
+            json = new StringBuffer(sharedPreferences.getString("saved", null));
         }
 
     }
+
     @Override
     protected ArrayList<Movies> doInBackground(URL... urls) {
         ArrayList<Movies> arrayList;
@@ -81,14 +84,15 @@ public class MyTask extends AsyncTask<URL, String, ArrayList<Movies>> {
         arrayList = parse(json);
         return arrayList;
     }
-    private ArrayList<Movies> parse(StringBuffer json){
+
+    private ArrayList<Movies> parse(StringBuffer json) {
         ArrayList<Movies> arrayList = new ArrayList<Movies>();
         JSONArray ar;
         JSONObject baseobj;
         try {
             baseobj = new JSONObject(json.toString());
             ar = baseobj.getJSONArray("results");
-            for(int i = 0; i < ar.length(); i++){
+            for (int i = 0; i < ar.length(); i++) {
                 JSONObject movie = ar.getJSONObject(i);
                 Movies m = new Movies();
                 m.setPoster_path(movie.getString("poster_path"));
@@ -103,6 +107,7 @@ public class MyTask extends AsyncTask<URL, String, ArrayList<Movies>> {
         }
         return arrayList;
     }
+
     @Override
     protected void onPostExecute(ArrayList<Movies> s) {
         super.onPostExecute(s);
